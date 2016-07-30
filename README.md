@@ -1,4 +1,4 @@
-# Multi-MP3-Player
+# Multi-MP3-Player (Unfinished)
 Made in Java using JavaFX. 
 
 Multi MP3 Player was made to allow audio engineers to bundle different audio files - such as individual bass/drum/guitar/vocal 
