@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="761.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <MenuBar fx:id="menubar" prefHeight="32.0" prefWidth="761.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Slider fx:id="timeSlider" layoutX="170.0" layoutY="135.0" prefHeight="17.0" prefWidth="500.0" />
+      <Label fx:id="titleLabel" alignment="CENTER" layoutX="254.0" layoutY="49.0" text="Multi MP3 Player" textFill="#0a0a0a" underline="true">
+         <font>
+            <Font name="Rockwell Bold Italic" size="30.0" />
+         </font>
+         <effect>
+            <Reflection fraction="0.67" topOpacity="0.17" />
+         </effect>
+      </Label>
+      <ImageView fx:id="playBtn" fitHeight="72.0" fitWidth="70.0" layoutX="32.0" layoutY="109.0" onMouseClicked="#playClick" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:assets/images/playbtn.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="pauseBtn" fitHeight="43.0" fitWidth="42.0" layoutX="112.0" layoutY="123.0" onMouseClicked="#pauseClick" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:assets/images/pausebtn.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label fx:id="currentTimeLabel" layoutX="671.0" layoutY="136.0" text="88:88 /">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Separator layoutY="202.0" prefHeight="1.0" prefWidth="761.0" style="-fx-background-color: white;" />
+      <Label fx:id="addTracksLabel" layoutX="32.0" layoutY="262.0" text="Add Tracks -" underline="true">
+         <font>
+            <Font name="Segoe UI Black" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="browseBtn" layoutX="155.0" layoutY="261.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#browseAction" prefHeight="27.0" prefWidth="83.0" text="Browse">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Separator layoutY="337.0" prefHeight="1.0" prefWidth="761.0" style="-fx-background-color: white;" />
+      <Separator layoutX="190.0" layoutY="340.0" orientation="VERTICAL" prefHeight="131.0" prefWidth="0.0" style="-fx-background-color: white;" />
+      <Separator layoutX="380.0" layoutY="340.0" orientation="VERTICAL" prefHeight="131.0" prefWidth="0.0" style="-fx-background-color: white;" />
+      <Separator layoutX="570.0" layoutY="340.0" orientation="VERTICAL" prefHeight="131.0" prefWidth="0.0" style="-fx-background-color: white;" />
+      <Label layoutX="67.0" layoutY="349.0" text="Drums">
+         <font>
+            <Font name="Segoe UI Black" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="270.0" layoutY="349.0" text="Bass">
+         <font>
+            <Font name="Segoe UI Black" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="444.0" layoutY="349.0" text="Guitars">
+         <font>
+            <Font name="Segoe UI Black" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="634.0" layoutY="349.0" text="Vocals">
+         <font>
+            <Font name="Segoe UI Black" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="270.0" layoutY="220.0" text="Track 1:" underline="true">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="270.0" layoutY="248.0" text="Track 2:" underline="true">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="270.0" layoutY="275.0" text="Track 3:" underline="true">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="270.0" layoutY="303.0" text="Track 4:" underline="true">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="trackOneLabel" layoutX="338.0" layoutY="220.0" prefHeight="21.0" prefWidth="316.0" />
+      <Label fx:id="trackTwoLabel" layoutX="338.0" layoutY="248.0" prefHeight="21.0" prefWidth="316.0" />
+      <Label fx:id="trackThreeLabel" layoutX="338.0" layoutY="275.0" prefHeight="21.0" prefWidth="316.0" />
+      <Label fx:id="trackFourLabel" layoutX="338.0" layoutY="303.0" prefHeight="21.0" prefWidth="316.0" />
+      <ToggleButton fx:id="drumsSoloBtn" layoutX="40.0" layoutY="381.0" mnemonicParsing="false" onAction="#drumsSolo" prefHeight="31.0" prefWidth="112.0" text="Solo" />
+      <ToggleButton fx:id="drumsMuteBtn" layoutX="40.0" layoutY="426.0" mnemonicParsing="false" onAction="#drumsMute" prefHeight="31.0" prefWidth="112.0" text="Mute" />
+      <ToggleButton fx:id="bassSoloBtn" layoutX="234.0" layoutY="381.0" mnemonicParsing="false" onAction="#bassSolo" prefHeight="31.0" prefWidth="112.0" text="Solo" />
+      <ToggleButton fx:id="bassMuteBtn" layoutX="234.0" layoutY="426.0" mnemonicParsing="false" onAction="#bassMute" prefHeight="31.0" prefWidth="112.0" text="Mute" />
+      <ToggleButton fx:id="gtrSoloBtn" layoutX="420.0" layoutY="381.0" mnemonicParsing="false" onAction="#gtrSolo" prefHeight="31.0" prefWidth="112.0" text="Solo" />
+      <ToggleButton fx:id="gtrMuteBtn" layoutX="420.0" layoutY="426.0" mnemonicParsing="false" onAction="#gtrMute" prefHeight="31.0" prefWidth="112.0" text="Mute" />
+      <ToggleButton fx:id="voxSoloBtn" layoutX="607.0" layoutY="381.0" mnemonicParsing="false" onAction="#voxSolo" prefHeight="31.0" prefWidth="112.0" text="Solo" />
+      <ToggleButton fx:id="voxMuteBtn" layoutX="607.0" layoutY="426.0" mnemonicParsing="false" onAction="#voxMute" prefHeight="31.0" prefWidth="112.0" text="Mute" />
+      <Label fx:id="totalTimeLabel" layoutX="714.0" layoutY="136.0" text="88:88">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
